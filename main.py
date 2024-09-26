@@ -1,4 +1,4 @@
-import telebot
+  import telebot
 from telebot import types
 import re
 
@@ -17,12 +17,12 @@ def enter_district(message):
     clear_data(message)
     data[message.chat.id] = {'stage':1}
     markup = types.InlineKeyboardMarkup()
-    itembtn1 = types.InlineKeyboardButton(text='6-8 лет', callback_data='6-8')
+    itembtn1 = types.InlineKeyboardButton(text='7-8 лет', callback_data='7-8')
     itembtn2 = types.InlineKeyboardButton(text='9-11 лет', callback_data='9-11')
     itembtn3 = types.InlineKeyboardButton(text='12-14 лет', callback_data='12-14')
     markup.add(itembtn1, itembtn2, itembtn3)
     bot.send_photo(message.chat.id, open('kiber1.png', 'rb'))
-    bot.send_message(message.chat.id, 'Школа программирования для детей KIBERone на Компрессорном приветствует вас!\U0001F60A\n \nНа этой неделе мы проводим бесплатный мастер-класс по программированию для детей 7-14 лет\U0001F4BB\n \n\U00002705Ваш ребенок создаст свой первый мультфильм и запрограммирует своего героя в игре Майнкрафт\U0001F5A5\n \n\U00002705Расскажем, как избавить ребенка от игромании и научить компьютерной грамотности, чтобы подготовить к успешному будущему\n \n\U00002705Длительность занятия 60 минут. Все необходимое предоставим. Ничего брать с собой не нужно.\n \n\U0001F4CDЗанятия будут проходить по адресу: ул. Латвийская, 19 КСК "Олимп"' )
+    bot.send_message(message.chat.id, 'Школа программирования для детей KIBERone на Компрессорном приветствует вас!\U0001F60A\n \nНа этой неделе мы проводим бесплатный пробный урок по программированию для детей 7-14 лет\U0001F4BB\n \n\U00002705Ваш ребенок создаст своего персонажа Roblox и запрограммирует своего героя в игре Майнкрафт\U0001F5A5\n \n\U00002705Расскажем, как избавить ребенка от игромании и научить компьютерной грамотности, чтобы подготовить к успешному будущему\n \n\U00002705Длительность занятия 60 минут. Все необходимое предоставим. Ничего брать с собой не нужно.\n \n\U0001F4CDЗанятия будут проходить по адресу: ул. Латвийская, 19 КСК "Олимп"' )
     bot.send_message(message.chat.id, 'Пожалуйста, укажите возраст вашего ребенка',reply_markup=markup)
 
 def enter_phone_number(message):
