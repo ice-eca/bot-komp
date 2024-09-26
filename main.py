@@ -2,7 +2,7 @@
 from telebot import types
 import re
 
-TOKEN = '6975023482:AAHWC_T5FXtONkKnCpZPPXVpGErWRdXO29Q'
+TOKEN = '6912091117:AAEFQH3hCpQEkxcTPR9mdlwns3ST-FiUxbE'
 
 bot = telebot.TeleBot(TOKEN)
 
@@ -10,7 +10,7 @@ phone_number_regex = re.compile(r'^(\+7|8)\d{10}$')
 age_regex = re.compile(r'^\d.*')
 district_regex = re.compile(r'^\D.*')
 data = {}
-request_chat_id = '-4067267677'
+request_chat_id = '-4095912255'
 
 @bot.message_handler(commands=['start'])
 def enter_district(message):
@@ -22,11 +22,15 @@ def enter_district(message):
     itembtn3 = types.InlineKeyboardButton(text='12-14 лет', callback_data='12-14')
     markup.add(itembtn1, itembtn2, itembtn3)
     bot.send_photo(message.chat.id, open('kiber1.png', 'rb'))
+<<<<<<< HEAD
     bot.send_message(message.chat.id, 'Школа программирования для детей KIBERone на Компрессорном приветствует вас!\U0001F60A\n \nНа этой неделе мы проводим бесплатный пробный урок по программированию для детей 7-14 лет\U0001F4BB\n \n\U00002705Ваш ребенок создаст своего персонажа Roblox и запрограммирует своего героя в игре Майнкрафт\U0001F5A5\n \n\U00002705Расскажем, как избавить ребенка от игромании и научить компьютерной грамотности, чтобы подготовить к успешному будущему\n \n\U00002705Длительность занятия 60 минут. Все необходимое предоставим. Ничего брать с собой не нужно.\n \n\U0001F4CDЗанятия будут проходить по адресу: ул. Латвийская, 19 КСК "Олимп"' )
+=======
+    bot.send_message(message.chat.id, 'Школа программирования для детей KIBERone в Москве приветствует вас!\U0001F60A\n \nНа этой неделе мы проводим бесплатный мастер-класс по программированию для детей 6-14 лет\U0001F4BB\n \n\U00002705Ваш ребенок создаст свой первый мультфильм и запрограммирует своего героя в игре Майнкрафт\U0001F5A5\n \n\U00002705Расскажем, как избавить ребенка от игромании и научить компьютерной грамотности, чтобы подготовить к успешному будущему\n \n\U00002705Длительность занятия 60 минут. Все необходимое предоставим. Ничего брать с собой не нужно.' )
+>>>>>>> cf36b4bb58d8efa921ebf6083c45fbf8a360096f
     bot.send_message(message.chat.id, 'Пожалуйста, укажите возраст вашего ребенка',reply_markup=markup)
 
 def enter_phone_number(message):
-    bot.send_message(message.chat.id, 'Пожалуйста, введите номер телефона, по которому мы можем с Вами связаться')
+    bot.send_message(message.chat.id, 'Пожалуйста, введите свой номер телефона, по которому мы сможем связаться с Вами и подобрать удобный район для записи')
     
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
